@@ -2,6 +2,8 @@ Auction::Application.routes.draw do
   root :to => "pages#home"
 
   resources :users
+  match '/signup', to: 'users#new', via: 'get'
+  
 
 
   # The priority is based upon order of creation: first created -> highest priority.
