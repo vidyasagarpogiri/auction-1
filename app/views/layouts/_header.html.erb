@@ -2,16 +2,12 @@
   <% menu_group do %>
     <%= menu_item "Home", root_path %>
   <% end %>
-  <%# <% if current_user %1> %>
-  <%#   <%= menu_item "Log Out", log_out_path %1> %>
-  <%# <% else %1> %>
-  <%#   <% menu_group :pull => :right do %1> %>
-  <%#     <%= menu_item "Sign Up", registration_path %1> %>
-  <%#     <% form_for @user, :url => session_path(:user) do |f| %1> %>
-  <%#       <p><%= f.text_field :email %1></p> %>
-  <%#       <p><%= f.password_field :password %1></p> %>
-  <%#       <p><%= f.submit "Sign in" %1></p> %>
-  <%#     <% end %1> %>
-  <%#   <% end %1> %>
-  <%# <% end %1> %>
+  <%= menu_group :pull => :right do %>
+    <% if signed_in? %>
+      <%= menu_item "Profile", user_path(current_user) %>
+      <%= menu_item "Sign Out", signout_path %>
+    <% else %>
+      <%= menu_item "Sign In", signin_path %>
+    <% end %>
+  <% end %>
 <% end %>
