@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
-#ruby-gemset=auction'
 gem 'rails', '4.0.1'
 
 gem 'sass-rails', '~> 4.0.0'
