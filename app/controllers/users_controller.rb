@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   # GET /users/1
   def show
     @user = User.find(params[:id])
+    @products = @user.products.paginate(page: params[:page])
   end
 
   # GET /users/new
