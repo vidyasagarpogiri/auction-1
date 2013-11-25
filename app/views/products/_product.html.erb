@@ -3,8 +3,7 @@
     <%= link_to product.title, product %>
   </div>
   <div class="description"><%= product.description %></div>
-  <div class="price"><%= product.price %></div>
-  <span class="timestamp">
-    Start at <%= product.start_at %>.
-  </span>
+  Цена: <div class="price"><%= product.price %></div>
+  <div>Торги начинаются <%= product.start_at %>.</div>
+  <div>Торги заканчиваются <%=product.finish_at %>.</div>
 </li>
