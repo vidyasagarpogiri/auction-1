@@ -32,6 +32,8 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @bids = @product.bids.paginate(page: params[:page])
+    @bid = @product.bids.build
   end
 
 
