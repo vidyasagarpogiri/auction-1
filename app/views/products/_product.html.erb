@@ -1,5 +1,9 @@
 <li>
-  <span class="content"><%= product.title %></span>
+  <div class="title">
+    <%= link_to product.title, product %>
+  </div>
+  <div class="description"><%= product.description %></div>
+  <div class="price"><%= product.price %></div>
   <span class="timestamp">
     Start at <%= product.start_at %>.
   </span>

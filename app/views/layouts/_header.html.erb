@@ -4,7 +4,7 @@
   <% end %>
   <%= menu_group :pull => :right do %>
     <% if signed_in? %>
-      <%= menu_item "Users", users_path %>
+      <%= menu_item "Продать", new_product_path %>
       <%= menu_item "Profile", user_path(current_user) %>
       <%= menu_item "Sign Out", signout_path, :method => 'delete' %>
     <% else %>
