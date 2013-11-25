@@ -17,19 +17,20 @@ namespace :db do
     end
 
     users = User.all(limit: 6)
-    50.times do
+    users.each do |user|
       title = Faker::Lorem.sentence(3)
-      # description = Faker::Lorem.sentence(15)
+      description = Faker::Lorem.sentence(10)
       price = 10500.50
       step = 100
       start = Date.today
       duration = 60*60*24*7
-      users.each { |user| user.products.create!(title: title,
-                                                price: price,
-                                                step: step,
-                                                start_at: start,
-                                                duration: duration)
-      }
+
+      user.products.create!(title: title,
+                            description: description,
+                            price: price,
+                            step: step,
+                            start_at: start,
+                            duration: duration)
     end
   end
 end

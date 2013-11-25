@@ -1,7 +1,8 @@
 Auction::Application.routes.draw do
-  root :to => "pages#home"
+  root :to => "products#index"
 
   resources :users
+  resources :products
   resources :sessions, only: [:new, :create, :destroy]
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'

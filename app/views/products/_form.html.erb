@@ -1,0 +1,66 @@
+<%= form_for @product, :html => { :class => 'form-horizontal' } do |f| %>
+  <%# <%= render 'shared/error_messages' %1> %>
+  <div class="control-group">
+    <%= f.label :title, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :price, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :price, :class => 'price',
+                       :value => (number_with_precision(f.object.price, :precision => 2) || 0) %>
+      
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :step, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :step, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :start_at, :class => 'control-label' %>
+    <div class="controls">
+      <%# <%= f.datetime_field :start_at, :class => 'datetime_field' %1> %>
+      <%= datetime_select :product, :start_at %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :duration, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :duration, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :description, :class => 'text_area' %>
+    </div>
+  </div>
+  <%# <div class="control-group"> %>
+  <%#   <%= f.label :email, :class => 'control-label' %1> %>
+  <%#   <div class="controls"> %>
+  <%#     <%= f.email_field :email, :class => 'email_field' %1> %>
+  <%#   </div> %>
+  <%# </div> %>
+  <%# <div class="control-group"> %>
+  <%#   <%= f.label :password, :class => 'control-label' %1> %>
+  <%#   <div class="controls"> %>
+  <%#     <%= f.password_field :password, :class => 'password_field' %1> %>
+  <%#   </div> %>
+  <%# </div> %>
+  <%# <div class="control-group"> %>
+  <%#   <%= f.label :password_confirmation, "Пароль ещё раз", :class => 'control-label' %1> %>
+  <%#   <div class="controls"> %>
+  <%#     <%= f.password_field :password_confirmation, :class => 'password_field' %1> %>
+  <%#   </div> %>
+  <%# </div> %>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                products_path, :class => 'btn' %>
+  </div>
+<% end %>
